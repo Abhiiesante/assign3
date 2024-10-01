@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header"
+                "content"
+                "sign-up"
+                "feature1"
+                "feature2"
+                "feature3"
+                "feature4";
+            grid-gap: 15px;
+            padding: 20px;
+        }
+
+        header,
+        section {
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header:hover,
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .header {
+            grid-area: header;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+        }
+
+        .content {
+            grid-area: content;
+            background: linear-gradient(135deg, #8e9eab, #eef2f3);
+            color: #333;
+        }
+
+        .sign-up {
+            grid-area: sign-up;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        }
+
+        .feature1 {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        .feature2 {
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+        }
+
+        .feature3 {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+        }
+
+        .feature4 {
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+        }
+
+        /* Mobile View (default) */
+        @media (max-width: 600px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "content"
+                    "sign-up"
+                    "feature1"
+                    "feature2"
+                    "feature3"
+                    "feature4";
+            }
+        }
+
+        /* Tablet View */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .container {
+                grid-template-areas:
+                    "header header"
+                    "content content"
+                    "sign-up feature1"
+                    "feature2 feature3"
+                    "feature4 feature4";
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Desktop View */
+        @media (min-width: 901px) {
+            .container {
+                grid-template-areas:
+                    "header header header"
+                    "feature1 feature2 feature3"
+                    "sign-up sign-up sign-up"
+                    "content content content";
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">Header</header>
+        <section class="content">Content</section>
+        <section class="sign-up">Sign Up</section>
+        <section class="feature feature1">Feature 1</section>
+        <section class="feature feature2">Feature 2</section>
+        <section class="feature feature3">Feature 3</section>
+        <section class="feature feature4">Feature 4</section>
+    </div>
+</body>
+
+</html>
